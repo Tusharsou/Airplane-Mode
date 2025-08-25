@@ -1,0 +1,13 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+  <h1>{{ doc.title }}</h1>
+
+  <p><strong>Airline:</strong> {{ doc.airline }}</p>
+  <p><strong>From:</strong> {{ doc.source_airport }} → <strong>To:</strong> {{ doc.destination_airport }}</p>
+  <p><strong>Date of Departure:</strong> {{ doc.date_of_departure }}</p>
+  <p><strong>Time of Departure:</strong> {{ doc.time_of_departure }}</p>
+  <p><strong>Duration:</strong> {{ doc.duration }}</p>
+
+  <a class="btn btn-primary" href="/book-flight?flight={{ doc.name }}">Book This Flight</a>
+{% endblock %} 

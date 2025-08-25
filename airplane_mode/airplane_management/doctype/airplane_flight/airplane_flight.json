@@ -1,0 +1,200 @@
+{
+ "actions": [],
+ "allow_guest_to_view": 1,
+ "allow_rename": 1,
+ "autoname": "format: {airplane}-{MM}-{YY}-{#####}",
+ "creation": "2025-08-21 16:47:48.125395",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "airplane",
+  "column_break_tw2t",
+  "status",
+  "section_break_ubvx",
+  "source_airport",
+  "column_break_a1ae",
+  "destination_airport",
+  "section_break_rgua",
+  "source_airport_code",
+  "column_break_awxr",
+  "destination_airport_code",
+  "section_break_fedl",
+  "date_of_departure",
+  "column_break_7vb8",
+  "time_of_departure",
+  "section_break_chc0",
+  "duration",
+  "column_break_eymv",
+  "is_published",
+  "section_break_oetq",
+  "route",
+  "column_break_e12r",
+  "title"
+ ],
+ "fields": [
+  {
+   "fieldname": "airplane",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Airplane",
+   "options": "Airline",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_departure",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date Of Departure",
+   "reqd": 1
+  },
+  {
+   "fieldname": "time_of_departure",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Time Of Departure",
+   "reqd": 1
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Duration",
+   "in_list_view": 1,
+   "label": "Duration",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Scheduled\nCompleted\nCancelled"
+  },
+  {
+   "fieldname": "source_airport",
+   "fieldtype": "Link",
+   "label": "Source Airport",
+   "options": "Airport",
+   "reqd": 1
+  },
+  {
+   "fieldname": "destination_airport",
+   "fieldtype": "Link",
+   "label": "Destination Airport",
+   "options": "Airport",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "source_airport.code",
+   "fieldname": "source_airport_code",
+   "fieldtype": "Data",
+   "label": "Source Airport Code",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "destination_airport.code",
+   "fieldname": "destination_airport_code",
+   "fieldtype": "Data",
+   "label": "Destination Airport Code",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_published",
+   "fieldtype": "Check",
+   "label": "Is Published"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_tw2t",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ubvx",
+   "fieldtype": "Section Break",
+   "label": "Airport Detail"
+  },
+  {
+   "fieldname": "column_break_a1ae",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_rgua",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_awxr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_fedl",
+   "fieldtype": "Section Break",
+   "label": "Departure Detail"
+  },
+  {
+   "fieldname": "column_break_7vb8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_chc0",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_eymv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_oetq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_e12r",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title"
+  }
+ ],
+ "grid_page_length": 50,
+ "has_web_view": 1,
+ "index_web_pages_for_search": 1,
+ "is_published_field": "is_published",
+ "links": [
+  {
+   "link_doctype": "Airplane Ticket",
+   "link_fieldname": "flight"
+  }
+ ],
+ "modified": "2025-08-25 18:03:42.283680",
+ "modified_by": "Administrator",
+ "module": "Airplane Management",
+ "name": "Airplane Flight",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "flight",
+ "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}
