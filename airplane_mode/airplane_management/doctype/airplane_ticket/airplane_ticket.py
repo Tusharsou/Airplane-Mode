@@ -43,7 +43,37 @@ class AirplaneTicket(Document):
 
 			if not exists:
 				return seat  
-		
-		
-	    
+
+class AirplaneTicket(Document):
+    def validate(self):
+        self.check_capacity_limit()
+
+    def check_capacity_limit(self):
+        if not self.airplane_flight:
+            return
+
+        # Get the linked airplane flight
+        flight = frappe.get_doc("Airplane Flight", self.airplane_flight)
+
+        if not flight.airplane:
+            return
+
+        # Get airplane capacity
+        capacity = frappe.db.get_value("Airplane", flight.airplane, "capacity")
+
+        # Count existing tickets for this flight (exclude current one if updating)
+        booked_tickets = frappe.db.count(
+            "Airplane Ticket",
+            filters={
+                "airplane_flight": self.airplane_flight,
+                "name": ["!=", self.name]   # exclude current ticket in update
+            }
+        )
+
+        if booked_tickets >= capacity:
+            frappe.throw(
+                f"Cannot create ticket. Airplane is full! "
+                f"({booked_tickets}/{capacity} seats already booked)"
+            )
        	
+
