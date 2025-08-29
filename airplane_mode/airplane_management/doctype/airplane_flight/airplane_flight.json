@@ -29,7 +29,9 @@
   "section_break_oetq",
   "route",
   "column_break_e12r",
-  "title"
+  "title",
+  "section_break_jva5",
+  "crew_member"
  ],
  "fields": [
   {
@@ -157,6 +159,16 @@
    "fieldname": "title",
    "fieldtype": "Data",
    "label": "Title"
+  },
+  {
+   "fieldname": "section_break_jva5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "crew_member",
+   "fieldtype": "Table",
+   "label": "Crew Member",
+   "options": "Flight Crew Member"
   }
  ],
  "grid_page_length": 50,
@@ -169,7 +181,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2025-08-25 18:03:42.283680",
+ "modified": "2025-08-27 15:22:12.520985",
  "modified_by": "Administrator",
  "module": "Airplane Management",
  "name": "Airplane Flight",

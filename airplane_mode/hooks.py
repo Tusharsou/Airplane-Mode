@@ -249,3 +249,19 @@ doctype_js = {
 doctype_js = {
     "Airplane Ticket": "public/js/airplane_ticket.js"
 }
+
+#doc_events = {
+#    "Shop Lead": {
+#        "before_insert": "airplane_mode.airplane_mode.doctype.shop_lead.shop_lead.before_insert"
+#    }
+#}
+
+fixtures = [
+    {
+        "doctype": "Shop Type",
+        "filters": {
+            "shop_type": ["in", ["Stall", "Walk-through", "Normal"]]
+        }
+    }
+]
+

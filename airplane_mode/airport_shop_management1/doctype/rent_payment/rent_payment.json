@@ -1,0 +1,103 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "prompt",
+ "creation": "2025-08-27 17:02:17.496719",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_gvjq",
+  "shop",
+  "tenant_name",
+  "payment_information_section",
+  "payment_date",
+  "rent_month",
+  "rent_year",
+  "amount_paid",
+  "payment_method",
+  "reference_no"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_gvjq",
+   "fieldtype": "Section Break",
+   "label": "Shop/Tenant Information"
+  },
+  {
+   "fieldname": "shop",
+   "fieldtype": "Link",
+   "label": "Shop",
+   "options": "Shop1"
+  },
+  {
+   "fetch_from": "shop.tenant_name",
+   "fieldname": "tenant_name",
+   "fieldtype": "Data",
+   "label": "Tenant Name"
+  },
+  {
+   "fieldname": "payment_information_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Information"
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date"
+  },
+  {
+   "fieldname": "rent_month",
+   "fieldtype": "Select",
+   "label": "Rent Month",
+   "options": "Jan\nFeb\nMar\nApr\nJun\nJly\nAug\nSep\nOct\nNov\nDec"
+  },
+  {
+   "fieldname": "rent_year",
+   "fieldtype": "Int",
+   "label": "Rent Year"
+  },
+  {
+   "fieldname": "amount_paid",
+   "fieldtype": "Currency",
+   "label": "Amount Paid"
+  },
+  {
+   "fieldname": "payment_method",
+   "fieldtype": "Select",
+   "label": "Payment Method",
+   "options": "Cash\nBank Transfer\nUPI\nCard"
+  },
+  {
+   "fieldname": "reference_no",
+   "fieldtype": "Data",
+   "label": "Reference No"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-27 18:40:28.222325",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management1",
+ "name": "Rent Payment",
+ "naming_rule": "Set by user",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
